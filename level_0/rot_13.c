@@ -30,7 +30,7 @@ int main(int argc, char **argv)
     while (argv[1][i])
     {
         c = rot(argv[1][i]);
-        write(1, &c, 1);
+        write(1, &c, 1); 
         i++;
     }
     write(1, "\n", 1);
