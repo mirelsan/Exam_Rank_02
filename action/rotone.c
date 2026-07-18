@@ -1,0 +1,33 @@
+#include <unistd.h>
+
+static char rot(char c)
+{
+    if(c == 'z')
+        return('a');
+    if(c == 'Z')
+        return('A');
+    if(c >= 'a' && c <= 'y')
+        return(c + 1);
+    if(c >= 'A' && c <= 'Y')
+        return(c + 1);
+    return(c);
+}
+
+int main(int argc, char **argv)
+{
+    if(argc != 2)
+    {
+        write(1, "\n", 1);
+        return(0);
+    }
+    int i = 0;
+    char c;
+    while(argv[1][i])
+    {
+        c = rot(argv[1][i]);
+        write(1, &c, 1);
+        i++;
+    }
+    write(1, "\n", 1);
+    return(0);
+}
